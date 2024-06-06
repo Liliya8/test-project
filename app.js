@@ -109,3 +109,34 @@ const connectMetamask = async () => {
 
 
 
+// 
+
+const ethers = require('ethers');
+
+// Connect to the local Ganache blockchain
+const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545');
+
+// Get the list of test accounts
+let accounts;
+provider.listAccounts().then(acc => accounts = acc);
+
+// Function to get the balance of an account
+async function getBalance(address) {
+  const balance = await provider.getBalance(address);
+  return ethers.utils.formatEther(balance);
+}
+
+// Function to display the balance
+function showBalance() {
+  const addressInput = document.getElementById('address');
+  const balanceElement = document.getElementById('balance');
+
+  getBalance(addressInput.value)
+    .then(balance => {
+      balanceElement.textContent = `Balance: ${balance} ETH`;
+    })
+    .catch(error => {
+      console.error(error);
+      balanceElement.textContent = 'Error getting balance';
+    });
+}
