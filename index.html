@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Task</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+   <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <h1>Test Task</h1>
+
+    <!-- Metamask Connection Section -->
+    <section>
+        <div class="chngbgc">
+        <button id="connectButton">CONNECT METAMASK</button>
+        <div id="walletAddress"></div>
+    </div>
+    </section>
+
+    <!-- SHA256 Hashing Section -->
+    
+    <section>
+        <div class="chngbgc">
+        <h2>SHA256 Hashing</h2>
+        <textarea id="inputText" placeholder="Enter text here"></textarea>
+        <button id="hashButton">Get SHA256</button>
+        <div id="hashOutput"></div>
+    </div>
+    </section>
+
+    <!-- AES Encryption/Decryption Section -->
+    <section >
+        <div class="chngbgc">
+
+        
+        <h2>AES Encryption/Decryption</h2>
+        <textarea id="inputText" placeholder="Enter text here"></textarea>
+        <input type="text" id="encryptionKey" placeholder="Enter encryption key" />
+        <button id="encryptButton">Encrypt</button>
+        <button id="decryptButton">Decrypt</button>
+        <div id="outputText"></div>
+    </div>
+    </section>
+
+    <!-- Doc Panel Section -->
+    <section>
+        <div class="chngbgc">
+        <h2>Doc Panel</h2>
+        <div id="docPanel"></div>
+        <iframe id="siteFrame" style="width: 100%; height: 500px;"></iframe>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
